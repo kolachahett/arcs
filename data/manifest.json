@@ -82,17 +82,17 @@
   },
   "stations": {
    "file": "stations.geojson",
-   "count": 9317,
+   "count": 9297,
    "geomType": "Point",
    "attrs": [
     "name",
     "railway",
     "station"
    ],
-   "bytes": 1727351,
+   "bytes": 1723630,
    "source": "osm",
    "key": {
-    "main": 9317,
+    "main": 9297,
     "extra": null,
     "km": null
    }
@@ -174,5 +174,5 @@
    }
   }
  },
- "total_bytes": 99396554
+ "total_bytes": 99392833
 }
