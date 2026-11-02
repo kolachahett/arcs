@@ -1,14 +1,14 @@
 {
- "version": "2.0",
+ "version": "2.1",
  "exported": "2026-11-02",
  "sources": [
   {
    "key": "boundaries",
    "label": "Boundaries",
-   "short": "ARCS 1.0 boundaries",
-   "text": "ARCS 1.0 states and districts, exported from my PostGIS through GeoServer",
-   "date": "2026-11-02",
-   "credit": "Boundaries: ARCS 1.0 states and districts"
+   "short": "Survey of India",
+   "text": "Survey of India, 2020 boundary database (states and districts)",
+   "date": "2025-10-16",
+   "credit": "Boundaries: Survey of India"
   },
   {
    "key": "osm",
@@ -30,7 +30,7 @@
    "key": "elevation",
    "label": "Elevation",
    "short": "Open-Meteo",
-   "text": "Copernicus DEM (GLO-90) via the Open-Meteo elevation API",
+   "text": "Copernicus DEM GLO-90 © DLR e.V. 2010–2014 and © Airbus Defence and Space GmbH 2014–2018, provided under COPERNICUS by the European Union and ESA; via the Open-Meteo elevation API",
    "date": null,
    "credit": "Elevation: Copernicus DEM via Open-Meteo"
   },
@@ -51,24 +51,34 @@
    "attrs": [
     "state"
    ],
-   "bytes": 4300517,
-   "simplify_deg": 0.0012,
+   "bytes": 3136164,
    "simplify": "GEOS coverage simplification",
-   "source": "boundaries"
+   "source": "boundaries",
+   "key": {
+    "main": 36,
+    "extra": 4,
+    "km": null
+   }
   },
   "districts": {
    "file": "districts.geojson",
-   "count": 742,
+   "count": 808,
    "geomType": "MultiPolygon",
    "attrs": [
-    "district_l",
     "district",
-    "state"
+    "state",
+    "lgd_code",
+    "soi_code",
+    "remarks"
    ],
-   "bytes": 4837455,
-   "simplify_deg": 0.006104,
+   "bytes": 4930827,
    "simplify": "GEOS coverage simplification",
-   "source": "boundaries"
+   "source": "boundaries",
+   "key": {
+    "main": 780,
+    "extra": 28,
+    "km": null
+   }
   },
   "stations": {
    "file": "stations.geojson",
@@ -80,7 +90,12 @@
     "station"
    ],
    "bytes": 1727351,
-   "source": "osm"
+   "source": "osm",
+   "key": {
+    "main": 9317,
+    "extra": null,
+    "km": null
+   }
   },
   "airports": {
    "file": "airports.geojson",
@@ -93,7 +108,12 @@
     "scheduled_service"
    ],
    "bytes": 72962,
-   "source": "airports"
+   "source": "airports",
+   "key": {
+    "main": 320,
+    "extra": 118,
+    "km": null
+   }
   },
   "rivers": {
    "file": "rivers.pmtiles",
@@ -107,7 +127,12 @@
    "minzoom": 4,
    "maxzoom": 12,
    "fullzoom": 6,
-   "source": "osm"
+   "source": "osm",
+   "key": {
+    "main": 5045,
+    "extra": null,
+    "km": 212561
+   }
   },
   "roads": {
    "file": "roads.pmtiles",
@@ -122,7 +147,12 @@
    "minzoom": 4,
    "maxzoom": 12,
    "fullzoom": 7,
-   "source": "osm"
+   "source": "osm",
+   "key": {
+    "main": 406319,
+    "extra": null,
+    "km": 578270
+   }
   },
   "railways": {
    "file": "railways.pmtiles",
@@ -136,8 +166,13 @@
    "minzoom": 4,
    "maxzoom": 12,
    "fullzoom": 4,
-   "source": "osm"
+   "source": "osm",
+   "key": {
+    "main": 99942,
+    "extra": null,
+    "km": 133639
+   }
   }
  },
- "total_bytes": 100467535
+ "total_bytes": 99396554
 }
