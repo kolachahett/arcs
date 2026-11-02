@@ -55,24 +55,25 @@ a{color:var(--accent)}
   <header>
     <div class="mark">ARCS</div>
     <h1>A web GIS portal for India, built on my own GeoServer</h1>
-    <p class="lede">Six national layers (states, districts, rivers, roads, railways and airports) that I prepared in QGIS, stored in PostGIS and published with GeoServer, shown in an OpenLayers web map. Its site check tells you how well connected any point in India is.</p>
+    <p class="lede">Seven national layers (states, districts, rivers, roads, railways, stations and airports) that I prepared in QGIS, stored in PostGIS and published with GeoServer, shown in an OpenLayers web map. Click anywhere and a place card tells you what is there and how well connected it is.</p>
     <p class="meta">Kolacha Hetkumar · M.Sc. Agriculture Analytics, Dhirubhai Ambani University</p>
     <p class="cta"><a class="btn" href="./">Open the live map →</a></p>
   </header>
 
   <figure class="hero">
-    <img class="shot" src="screenshots/site-check.png" alt="ARCS site check near Anand, Gujarat, showing the nearest road, railway, river and airport with lines drawn on the map">
-    <figcaption>Site check near Anand, Gujarat: the district, and the distance to the nearest road, railway, river and airport.</figcaption>
+    <img class="shot" src="screenshots/place-card.png" alt="ARCS place card near Anand, Gujarat: the place name, district, elevation, and the nearest national highway, railway station, airport, river and road, with lines drawn on the map">
+    <figcaption>The place card near Anand, Gujarat: where you are, and the straight-line distance to the nearest national highway, railway station, airport with scheduled flights, river and road.</figcaption>
   </figure>
 
   <section>
     <h2>What it does</h2>
     <div class="grid">
-      <div class="card"><h3>Site check</h3><p>Click any point to get its district and state, and the straight-line distance to the nearest road, railway, river and airport. Each answer comes from a WFS query to GeoServer, and the search area widens until the nearest feature is guaranteed to be inside it.</p></div>
+      <div class="card"><h3>Place card</h3><p>Click any point for its name (Nominatim), district, state, coordinates and elevation, and the straight-line distance to the nearest national highway, railway station, airport with scheduled flights, named river and road. The search area widens until the nearest feature is guaranteed to be inside it. Directions, share, save and map sheet buttons are on the card.</p></div>
       <div class="card"><h3>Search my own data</h3><p>District and state names are searched in GeoServer with a CQL filter, alongside OpenStreetMap place search. Picking a result zooms to it and outlines it.</p></div>
-      <div class="card"><h3>Click to identify</h3><p>Clicking a feature shows its attributes and outlines it, using WMS GetFeatureInfo.</p></div>
+      <div class="card"><h3>Click to identify</h3><p>When the click lands on a feature, the card adds its attributes as one line you can open, and outlines it on the map.</p></div>
       <div class="card"><h3>Attribute table</h3><p>The features in view, loaded through WFS without geometry so it stays fast. Click a row to zoom to that feature.</p></div>
-      <div class="card"><h3>Map sheets</h3><p>Saves the view as a PNG with a title, legend, scale bar, north arrow and credits, and the site check results when one is open.</p></div>
+      <div class="card"><h3>Map sheets</h3><p>Saves the view as a PNG with a title, legend, scale bar, north arrow and credits, and the place card when one is open.</p></div>
+      <div class="card"><h3>A quiet screen</h3><p>Only search, the layer key, zoom and the basemap button stay on the map. Measuring, the attribute table, drawing, saved places and shortcuts sit under one Tools button. On phones the place card slides up from the bottom.</p></div>
       <div class="card"><h3>Basemaps and compare</h3><p>Licensed Esri basemaps with live previews, a divider to compare two of them side by side, and greyscale and strength controls.</p></div>
     </div>
   </section>
@@ -80,23 +81,33 @@ a{color:var(--accent)}
   <section>
     <h2>How it's built</h2>
     <div class="flow"><span class="step">QGIS</span><span class="arrow">→</span><span class="step">PostGIS (pgAdmin)</span><span class="arrow">→</span><span class="step">GeoServer: WMS and WFS</span><span class="arrow">→</span><span class="step">OpenLayers web map</span></div>
-    <p class="note">I prepared the six layers in QGIS, set up the PostGIS database in pgAdmin, and published the layers on GeoServer, which draws them with the styles set in my GeoServer. The OpenLayers front end was built with AI coding tools: I chose the features and tested each one against my GeoServer services.</p>
+    <p class="note">I prepared the layers in QGIS, set up the PostGIS database in pgAdmin, and published the layers on GeoServer, which draws them with the styles set in my GeoServer. The OpenLayers front end was built with AI coding tools: I chose the features and tested each one against my GeoServer services.</p>
+  </section>
+
+  <section>
+    <h2>Data sources</h2>
+    <div class="grid">
+      <div class="card"><h3>Boundaries</h3><p>The GeoServer edition uses the Survey of India 2020 boundary database (updated October 2025): 40 states and 808 district areas. This web edition keeps the ARCS 1.0 states and districts.</p></div>
+      <div class="card"><h3>Roads, railways, stations, rivers</h3><p>© OpenStreetMap contributors (ODbL), from the Geofabrik India extract with data to 1 November 2026: motorway, trunk, primary and secondary roads, railways, named stations and halts, and named rivers.</p></div>
+      <div class="card"><h3>Airports</h3><p>OurAirports (downloaded 2 November 2026), India only, without closed airports and heliports; scheduled service marks airports with regular flights.</p></div>
+      <div class="card"><h3>Elevation and names</h3><p>Elevation from the Copernicus DEM via the Open-Meteo elevation API, and place names from OpenStreetMap Nominatim, looked up at each click.</p></div>
+    </div>
   </section>
 
   <section>
     <h2>Screenshots</h2>
     <div class="gallery">
-      <figure><img class="shot" src="screenshots/map.png" alt="ARCS map at zoom 7.9 over Gujarat with all six layers and the layer key"><figcaption>All six layers over Gujarat, with GeoServer's own legend symbols in the key.</figcaption></figure>
+      <figure><img class="shot" src="screenshots/map.png" alt="ARCS map at zoom 7.9 over Gujarat with the layers and the layer key"><figcaption>The layers over Gujarat, drawn with my GeoServer styles, with the key built from the same styles.</figcaption></figure>
       <figure><img class="shot" src="screenshots/attribute-table.png" alt="ARCS attribute table of districts, sorted by district name"><figcaption>The attribute table for districts in view, sorted by name.</figcaption></figure>
     </div>
   </section>
 
   <section>
     <h2>Live demo</h2>
-    <p class="note"><a href="./">Open the live map</a>. It runs in your browser from a copy of my PostGIS layers, exported through GeoServer on 2 November 2026, and draws them with the same GeoServer styles. To see the GeoServer edition running on my own GeoServer, email me at <a href="mailto:202519006@dau.ac.in">202519006@dau.ac.in</a>.</p>
+    <p class="note"><a href="./">Open the live map</a>. It runs in your browser from files (GeoJSON and PMTiles vector tiles) built from the sources above on 2 November 2026, and draws them with the same GeoServer styles. To see the GeoServer edition running on my own GeoServer, email me at <a href="mailto:202519006@dau.ac.in">202519006@dau.ac.in</a>.</p>
   </section>
 
-  <footer>© 2026 Kolacha Hetkumar. All rights reserved. The map’s code can be viewed, but it may not be copied, reused or redistributed without my written permission. Basemaps are from Esri and its partners; roads and railways © OpenStreetMap contributors.</footer>
+  <footer>© 2026 Kolacha Hetkumar. All rights reserved. The map’s code can be viewed, but it may not be copied, reused or redistributed without my written permission. Basemaps are from Esri and its partners. Roads, railways, stations and rivers © OpenStreetMap contributors (ODbL); airports: OurAirports; elevation: Copernicus DEM via Open-Meteo; place names: Nominatim.</footer>
 </div>
 </body>
 </html>

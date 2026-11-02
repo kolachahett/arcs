@@ -2,7 +2,7 @@
 <StyledLayerDescriptor version="1.0.0"
   xmlns="http://www.opengis.net/sld"
   xmlns:ogc="http://www.opengis.net/ogc">
-  <NamedLayer><Name>webgis_india:roads</Name>
+  <NamedLayer><Name>webgis_india:roads_osm</Name>
   <UserStyle><FeatureTypeStyle>
 
     <Rule>

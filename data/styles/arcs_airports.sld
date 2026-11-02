@@ -2,7 +2,7 @@
 <StyledLayerDescriptor version="1.0.0"
   xmlns="http://www.opengis.net/sld"
   xmlns:ogc="http://www.opengis.net/ogc">
-  <NamedLayer><Name>webgis_india:airports</Name>
+  <NamedLayer><Name>webgis_india:airports_oa</Name>
   <UserStyle><FeatureTypeStyle>
     
     <Rule>
