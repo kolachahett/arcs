@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<!-- ARCS – India Web GIS Portal (project page). © 2026 Kolacha Hetkumar. All rights reserved. -->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="author" content="Kolacha Hetkumar">
+<title>ARCS – India Web GIS Portal | Kolacha Hetkumar</title>
+<meta name="description" content="ARCS: a web GIS portal for India built on PostGIS and GeoServer, with a site check that measures the distance from any point to the nearest road, railway, river and airport.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&display=swap">
+<style>
+:root{
+  --paper:#F7F8F6; --card:#FFFFFF; --ink:#1D2530; --ink-2:#4A5563; --ink-3:#727C89;
+  --hair:rgba(29,37,48,.12); --accent:#5B3F98; --accent-soft:rgba(91,63,152,.10);
+  --shadow:0 1px 2px rgba(29,37,48,.06),0 18px 44px rgba(29,37,48,.12);
+  color-scheme:light;
+}
+@media (prefers-color-scheme:dark){:root{
+  --paper:#12161C; --card:#1A2028; --ink:#E7EBEF; --ink-2:#B4BCC6; --ink-3:#8A939E;
+  --hair:rgba(231,235,239,.14); --accent:#B49BEA; --accent-soft:rgba(180,155,234,.14);
+  --shadow:0 1px 2px rgba(0,0,0,.35),0 18px 44px rgba(0,0,0,.45); color-scheme:dark;}}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:"Archivo",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;background:var(--paper);color:var(--ink);line-height:1.55;font-size:17px;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+header{padding:56px 0 28px}
+.mark{font-variation-settings:"wdth" 125;font-weight:800;font-size:15px;letter-spacing:.06em;color:var(--accent)}
+h1{font-variation-settings:"wdth" 110;font-weight:800;font-size:clamp(34px,5.4vw,58px);line-height:1.05;letter-spacing:-.01em;margin-top:10px;max-width:17ch}
+.lede{margin-top:18px;font-size:clamp(17px,2vw,20px);color:var(--ink-2);max-width:60ch}
+.meta{margin-top:18px;font-size:14.5px;color:var(--ink-3)}
+.shot{display:block;width:100%;height:auto;border-radius:14px;border:1px solid var(--hair);box-shadow:var(--shadow);background:var(--card)}
+.hero{margin-top:8px}
+figcaption{margin-top:10px;font-size:14px;color:var(--ink-3)}
+section{padding:56px 0 0}
+h2{font-variation-settings:"wdth" 105;font-weight:750;font-size:clamp(24px,3vw,32px);line-height:1.15;margin-bottom:16px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:14px}
+.card{background:var(--card);border:1px solid var(--hair);border-radius:14px;padding:18px 18px 16px}
+.card h3{font-size:17px;font-weight:650;margin-bottom:6px}
+.card p{font-size:15.5px;color:var(--ink-2)}
+.flow{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin:6px 0 18px}
+.step{background:var(--accent-soft);color:var(--ink);border-radius:999px;padding:8px 14px;font-weight:600;font-size:15px}
+.arrow{color:var(--ink-3)}
+.note{font-size:15.5px;color:var(--ink-2);max-width:70ch}
+.gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:22px}
+footer{margin:72px 0 0;padding:28px 0 40px;border-top:1px solid var(--hair);font-size:14px;color:var(--ink-3)}
+a{color:var(--accent)}
+.cta{margin-top:22px}
+.btn{display:inline-block;padding:11px 20px;border-radius:999px;background:var(--accent);color:var(--paper);font-weight:650;font-size:16px;text-decoration:none}
+.btn:hover{filter:brightness(1.08)}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="mark">ARCS</div>
+    <h1>A web GIS portal for India, built on my own GeoServer</h1>
+    <p class="lede">Six national layers (states, districts, rivers, roads, railways and airports) that I prepared in QGIS, stored in PostGIS and published with GeoServer, shown in an OpenLayers web map. Its site check tells you how well connected any point in India is.</p>
+    <p class="meta">Kolacha Hetkumar · M.Sc. Agriculture Analytics, Dhirubhai Ambani University</p>
+    <p class="cta"><a class="btn" href="./">Open the live map →</a></p>
+  </header>
+
+  <figure class="hero">
+    <img class="shot" src="screenshots/site-check.png" alt="ARCS site check near Anand, Gujarat, showing the nearest road, railway, river and airport with lines drawn on the map">
+    <figcaption>Site check near Anand, Gujarat: the district, and the distance to the nearest road, railway, river and airport.</figcaption>
+  </figure>
+
+  <section>
+    <h2>What it does</h2>
+    <div class="grid">
+      <div class="card"><h3>Site check</h3><p>Click any point to get its district and state, and the straight-line distance to the nearest road, railway, river and airport. Each answer comes from a WFS query to GeoServer, and the search area widens until the nearest feature is guaranteed to be inside it.</p></div>
+      <div class="card"><h3>Search my own data</h3><p>District and state names are searched in GeoServer with a CQL filter, alongside OpenStreetMap place search. Picking a result zooms to it and outlines it.</p></div>
+      <div class="card"><h3>Click to identify</h3><p>Clicking a feature shows its attributes and outlines it, using WMS GetFeatureInfo.</p></div>
+      <div class="card"><h3>Attribute table</h3><p>The features in view, loaded through WFS without geometry so it stays fast. Click a row to zoom to that feature.</p></div>
+      <div class="card"><h3>Map sheets</h3><p>Saves the view as a PNG with a title, legend, scale bar, north arrow and credits, and the site check results when one is open.</p></div>
+      <div class="card"><h3>Basemaps and compare</h3><p>Licensed Esri basemaps with live previews, a divider to compare two of them side by side, and greyscale and strength controls.</p></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>How it's built</h2>
+    <div class="flow"><span class="step">QGIS</span><span class="arrow">→</span><span class="step">PostGIS (pgAdmin)</span><span class="arrow">→</span><span class="step">GeoServer: WMS and WFS</span><span class="arrow">→</span><span class="step">OpenLayers web map</span></div>
+    <p class="note">I prepared the six layers in QGIS, set up the PostGIS database in pgAdmin, and published the layers on GeoServer, which draws them with the styles set in my GeoServer. The OpenLayers front end was built with AI coding tools: I chose the features and tested each one against my GeoServer services.</p>
+  </section>
+
+  <section>
+    <h2>Screenshots</h2>
+    <div class="gallery">
+      <figure><img class="shot" src="screenshots/map.png" alt="ARCS map at zoom 7.9 over Gujarat with all six layers and the layer key"><figcaption>All six layers over Gujarat, with GeoServer's own legend symbols in the key.</figcaption></figure>
+      <figure><img class="shot" src="screenshots/attribute-table.png" alt="ARCS attribute table of districts, sorted by district name"><figcaption>The attribute table for districts in view, sorted by name.</figcaption></figure>
+    </div>
+  </section>
+
+  <section>
+    <h2>Live demo</h2>
+    <p class="note">ARCS runs on my own GeoServer, so I show the live map in interviews. To see it, email me at <a href="mailto:202519006@dau.ac.in">202519006@dau.ac.in</a>.</p>
+  </section>
+
+  <footer>© 2026 Kolacha Hetkumar. All rights reserved. The code is private. Basemaps in the screenshots are from Esri and its partners.</footer>
+</div>
+</body>
+</html>

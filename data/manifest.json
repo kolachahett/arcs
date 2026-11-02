@@ -1,0 +1,120 @@
+{
+ "exported": "2026-11-02",
+ "source": "PostGIS database webgis_db, GeoServer workspace webgis_india",
+ "styles": "styles/arcs_<layer>.sld (copies of the GeoServer styles)",
+ "layers": {
+  "states": {
+   "file": "states.geojson",
+   "count": 40,
+   "geomType": "MultiPolygon",
+   "attrs": [
+    "state"
+   ],
+   "bytes": 4300517,
+   "simplify_deg": 0.0012,
+   "simplify": "GEOS coverage simplification"
+  },
+  "districts": {
+   "file": "districts.geojson",
+   "count": 742,
+   "geomType": "MultiPolygon",
+   "attrs": [
+    "district_l",
+    "district",
+    "state"
+   ],
+   "bytes": 4837455,
+   "simplify_deg": 0.006104,
+   "simplify": "GEOS coverage simplification"
+  },
+  "rivers": {
+   "file": "rivers.geojson",
+   "count": 54,
+   "attrs": [
+    "dissolve",
+    "scalerank",
+    "featurecla",
+    "name",
+    "name_alt",
+    "rivernum",
+    "note",
+    "min_zoom",
+    "name_en",
+    "min_label",
+    "ne_id",
+    "label",
+    "wikidataid",
+    "name_ar",
+    "name_bn",
+    "name_de",
+    "name_es",
+    "name_fr",
+    "name_el",
+    "name_hi",
+    "name_hu",
+    "name_id",
+    "name_it",
+    "name_ja",
+    "name_ko",
+    "name_nl",
+    "name_pl",
+    "name_pt",
+    "name_ru",
+    "name_sv",
+    "name_tr",
+    "name_vi",
+    "name_zh",
+    "name_fa",
+    "name_he",
+    "name_uk",
+    "name_ur",
+    "name_zht"
+   ],
+   "bytes": 377256,
+   "simplify_deg": 0.0001,
+   "geomType": "MultiLineString"
+  },
+  "airports": {
+   "file": "airports.geojson",
+   "count": 151,
+   "attrs": [
+    "name",
+    "type",
+    "district",
+    "state"
+   ],
+   "bytes": 35653,
+   "simplify_deg": 0,
+   "geomType": "Point"
+  },
+  "roads": {
+   "file": "roads.pmtiles",
+   "count": 391490,
+   "geomType": "MultiLineString",
+   "attrs": [
+    "name",
+    "highway"
+   ],
+   "bytes": 59081098,
+   "minzoom": 4,
+   "maxzoom": 12,
+   "fullzoom": 7,
+   "over_limit": false
+  },
+  "railways": {
+   "file": "railways.pmtiles",
+   "count": 97759,
+   "geomType": "MultiLineString",
+   "attrs": [
+    "name",
+    "railway"
+   ],
+   "bytes": 11239157,
+   "minzoom": 4,
+   "maxzoom": 12,
+   "fullzoom": 4,
+   "over_limit": false
+  }
+ },
+ "total_bytes": 79871136
+}
