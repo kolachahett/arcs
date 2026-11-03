@@ -1,20 +1,20 @@
 {
- "version": "2.1",
- "exported": "2026-11-02",
+ "version": "2.2",
+ "exported": "2026-11-03",
  "sources": [
   {
    "key": "boundaries",
    "label": "Boundaries",
    "short": "Survey of India",
-   "text": "Survey of India, 2020 boundary database (states and districts)",
+   "text": "Source: Survey of India, Government of India. 2020 Administrative Boundary Database (states and districts), metadata dated 16 October 2025",
    "date": "2025-10-16",
-   "credit": "Boundaries: Survey of India"
+   "credit": "Source: Survey of India, Government of India"
   },
   {
    "key": "osm",
    "label": "Roads, railways, stations and rivers",
    "short": "OpenStreetMap",
-   "text": "© OpenStreetMap contributors (ODbL), Geofabrik India extract",
+   "text": "© OpenStreetMap contributors, under the ODbL 1.0; Geofabrik India extract",
    "date": "2026-11-01",
    "credit": "© OpenStreetMap contributors (ODbL), Geofabrik extract"
   },
@@ -22,25 +22,25 @@
    "key": "airports",
    "label": "Airports",
    "short": "OurAirports",
-   "text": "OurAirports, India, without closed airports and heliports",
+   "text": "OurAirports (public domain), India, without closed airports and heliports",
    "date": "2026-11-02",
-   "credit": "Airports: OurAirports"
+   "credit": "Airports: OurAirports, public domain"
   },
   {
    "key": "elevation",
    "label": "Elevation",
    "short": "Open-Meteo",
-   "text": "Copernicus DEM GLO-90 © DLR e.V. 2010–2014 and © Airbus Defence and Space GmbH 2014–2018, provided under COPERNICUS by the European Union and ESA; via the Open-Meteo elevation API",
+   "text": "Produced using Copernicus WorldDEM™-90 © DLR e.V. 2010-2014 and © Airbus Defence and Space GmbH 2014-2018 provided under COPERNICUS by the European Union and ESA; all rights reserved. The organisations in charge of the Copernicus programme by law or by delegation do not incur any liability for any use of the Copernicus WorldDEM™-90. Through the Open-Meteo.com elevation API (CC BY 4.0)",
    "date": null,
-   "credit": "Elevation: Copernicus DEM via Open-Meteo"
+   "credit": "Elevation: Copernicus WorldDEM-90 via Open-Meteo.com (CC BY 4.0)"
   },
   {
    "key": "names",
    "label": "Place names and search",
    "short": "Nominatim",
-   "text": "OpenStreetMap Nominatim",
+   "text": "Nominatim, © OpenStreetMap contributors (search only when you press Enter)",
    "date": null,
-   "credit": "Names and search: Nominatim"
+   "credit": "Names and search: Nominatim, © OpenStreetMap contributors"
   }
  ],
  "layers": {
@@ -76,23 +76,23 @@
    "source": "boundaries",
    "key": {
     "main": 780,
-    "extra": 28,
+    "extra": 6,
     "km": null
    }
   },
   "stations": {
    "file": "stations.geojson",
-   "count": 9297,
+   "count": 9272,
    "geomType": "Point",
    "attrs": [
     "name",
     "railway",
     "station"
    ],
-   "bytes": 1723630,
+   "bytes": 1505815,
    "source": "osm",
    "key": {
-    "main": 9297,
+    "main": 9272,
     "extra": null,
     "km": null
    }
@@ -107,7 +107,7 @@
     "type",
     "scheduled_service"
    ],
-   "bytes": 72962,
+   "bytes": 65051,
    "source": "airports",
    "key": {
     "main": 320,
@@ -123,13 +123,13 @@
     "name",
     "major"
    ],
-   "bytes": 14315208,
+   "bytes": 15271199,
    "minzoom": 4,
    "maxzoom": 12,
    "fullzoom": 6,
    "source": "osm",
    "key": {
-    "main": 5045,
+    "main": 4580,
     "extra": null,
     "km": 212561
    }
@@ -174,5 +174,21 @@
    }
   }
  },
- "total_bytes": 99392833
+ "total_bytes": 100123098,
+ "outline": {
+  "file": "india_outline.geojson",
+  "style": "arcs_india_outline.sld",
+  "source": "boundaries",
+  "bytes": 902381
+ },
+ "lookup": {
+  "zoom": 12,
+  "extent": 16384,
+  "admin": "lk_admin.pmtiles",
+  "highway": "lk_highways.pmtiles",
+  "road": "lk_roads.pmtiles",
+  "river": "lk_rivers.pmtiles",
+  "exclude": "lookup.json",
+  "bytes": 68948151
+ }
 }

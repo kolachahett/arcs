@@ -1,0 +1,8 @@
+ARCS – India web GIS portal
+Copyright (c) 2026 Kolacha Hetkumar. All rights reserved.
+
+This licence covers the ARCS code, styles and page design in this repository (index.html, about.html, data/styles/,
+favicons and images). They may be viewed, but no permission is granted to copy, modify, reuse or redistribute them
+without the author's written permission.
+
+It does not cover the map data in data/, which keeps its owners' licences: see DATA_LICENSE.md.
