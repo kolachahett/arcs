@@ -1,12 +1,12 @@
 {
- "version": "2.2",
+ "version": "2.3",
  "exported": "2026-11-03",
  "sources": [
   {
    "key": "boundaries",
    "label": "Boundaries",
    "short": "Survey of India",
-   "text": "Source: Survey of India, Government of India. 2020 Administrative Boundary Database (states and districts), metadata dated 16 October 2025",
+   "text": "Source: Survey of India, Government of India. 2020 Administrative Boundary Database (states and districts), metadata dated 16 October 2025. Two district names follow the official district directory (National Portal of India, 3 November 2026): Bengaluru South (formerly Rāmanagara) and Y.S.R. Kadapa",
    "date": "2025-10-16",
    "credit": "Source: Survey of India, Government of India"
   },
@@ -14,17 +14,17 @@
    "key": "osm",
    "label": "Roads, railways, stations and rivers",
    "short": "OpenStreetMap",
-   "text": "© OpenStreetMap contributors, under the ODbL 1.0; Geofabrik India extract",
+   "text": "© OpenStreetMap contributors, under the ODbL 1.0; Geofabrik India extract. Station renamings from official notices (Hubballi: Press Information Bureau, 12 March 2023)",
    "date": "2026-11-01",
    "credit": "© OpenStreetMap contributors (ODbL), Geofabrik extract"
   },
   {
    "key": "airports",
    "label": "Airports",
-   "short": "OurAirports",
-   "text": "OurAirports (public domain), India, without closed airports and heliports",
-   "date": "2026-11-02",
-   "credit": "Airports: OurAirports, public domain"
+   "short": "AAI, DGCA",
+   "text": "Official civil airports: eAIP India AD 1.3 and AD 1.4 (AIRAC November 2026), DGCA's licensed aerodromes (3 November 2026) and AAI's traffic statistics for October 2025 to September 2026 (Annexure III C). Scheduled flights means scheduled airline departures: DGCA’s Winter 2026 schedule could not be read (its files returned 404 on 3 November 2026), so an airport counts when AAI recorded at least 100 passengers in at least 3 of those 12 months, or in every month since it opened, except Juhu, HAL Bengaluru and Begumpet, whose traffic is business and general aviation only. Names are the eAIP's; where two airports serve one city, the others show their locality in brackets, for example Hyderabad International Airport (Begumpet). Coordinates and IATA codes: OurAirports (public domain, 2 November 2026)",
+   "date": "2026-11-03",
+   "credit": "Airports: AAI, DGCA; coordinates OurAirports (public domain)"
   },
   {
    "key": "elevation",
@@ -71,7 +71,7 @@
     "soi_code",
     "remarks"
    ],
-   "bytes": 4930827,
+   "bytes": 4930861,
    "simplify": "GEOS coverage simplification",
    "source": "boundaries",
    "key": {
@@ -82,36 +82,38 @@
   },
   "stations": {
    "file": "stations.geojson",
-   "count": 9272,
+   "count": 9270,
    "geomType": "Point",
    "attrs": [
     "name",
     "railway",
     "station"
    ],
-   "bytes": 1505815,
+   "bytes": 1505491,
    "source": "osm",
    "key": {
-    "main": 9272,
+    "main": 9270,
     "extra": null,
     "km": null
    }
   },
   "airports": {
    "file": "airports.geojson",
-   "count": 320,
+   "count": 150,
    "geomType": "Point",
    "attrs": [
     "name",
     "iata_code",
     "type",
-    "scheduled_service"
+    "scheduled_service",
+    "locality",
+    "served"
    ],
-   "bytes": 65051,
+   "bytes": 36303,
    "source": "airports",
    "key": {
-    "main": 320,
-    "extra": 118,
+    "main": 150,
+    "extra": 130,
     "km": null
    }
   },
@@ -174,7 +176,7 @@
    }
   }
  },
- "total_bytes": 100123098,
+ "total_bytes": 100094060,
  "outline": {
   "file": "india_outline.geojson",
   "style": "arcs_india_outline.sld",
@@ -189,6 +191,222 @@
   "road": "lk_roads.pmtiles",
   "river": "lk_rivers.pmtiles",
   "exclude": "lookup.json",
-  "bytes": 68948151
+  "bytes": 68949899
+ },
+ "district_changes": {
+  "checked": "2026-11-03",
+  "changes": [
+   {
+    "state": "DELHI",
+    "districts": [
+     "CENTRAL",
+     "EAST",
+     "NAZUL",
+     "NEW DELHI",
+     "NORTH",
+     "NORTH EAST",
+     "NORTH WEST",
+     "SHAHDARA",
+     "SOUTH",
+     "SOUTH EAST",
+     "SOUTH WEST",
+     "WEST"
+    ],
+    "note": "Delhi was reorganised into 13 districts on 25 December 2025; official boundaries not yet published.",
+    "source": "Delhi Revenue Department, notification of 25 December 2025",
+    "url": "https://revenue.delhi.gov.in/revenue/notification-no-f223sdm-iihqland2025285-dated-25122025-creation-39-sub-divisions-13-areas"
+   },
+   {
+    "state": "HARYANA",
+    "districts": [
+     "HISAR"
+    ],
+    "note": "Hansi, part of this district, became a district on 22 December 2025; official boundaries not yet published.",
+    "source": "Hansi district, Government of Haryana",
+    "url": "https://hansi.haryana.gov.in/"
+   },
+   {
+    "state": "GUJARAT",
+    "districts": [
+     "BANAS KANTHA"
+    ],
+    "note": "The Tharad area of this district is now the new Vav-Tharad district; official boundaries not yet published.",
+    "source": "Gujarat Information, 25 January 2026",
+    "url": "https://gujaratinformation.gujarat.gov.in/PressReleaseDetailsL/?id=34125&DepId=56&DistrictId=35&LanguageId=1"
+   },
+   {
+    "state": "NAGALAND",
+    "districts": [
+     "PHEK"
+    ],
+    "note": "Meluri, a sub-division of this district, became a district (notified 2 November 2024); official boundaries not yet published.",
+    "source": "Nagaland IPR, 6 March 2025",
+    "url": "https://ipr.nagaland.gov.in/THIRD-DAY-OF-THE-SIXTH-SESSION-OF-THE-14th-NLA-ON-6th-MARCH"
+   },
+   {
+    "state": "ANDHRA PRADESH",
+    "districts": [
+     "Prakasam"
+    ],
+    "note": "The western part of this district became Markapuram district on 31 December 2025; official boundaries not yet published.",
+    "source": "Markapuram district, Government of Andhra Pradesh",
+    "url": "https://markapuram.ap.gov.in/about-district/"
+   }
+  ]
+ },
+ "awaiting": {
+  "checked": "2026-11-03",
+  "items": [
+   {
+    "what": "DGCA's Domestic Flight Schedule, Winter 2026",
+    "status": "DGCA's page lists the nine airlines' files (25 October 2026 to 27 March 2027), but every file returned 404. Until they can be read, scheduled flights follow AAI's monthly traffic, as the about page describes.",
+    "url": "https://www.dgca.gov.in/digigov-portal/?page=4201%2F4200%2Fservicename"
+   },
+   {
+    "what": "Begumpet, Hyderabad (VOHY): no scheduled flights",
+    "status": "Left out of scheduled flights as business and general aviation only, by the owner's decision. No official statement says so; AAI's figures show about 3 passengers per aircraft movement, and the eAIP lists weekday operator hours and no customs or ground handling.",
+    "url": "https://aim-india.aai.aero/eaip"
+   },
+   {
+    "what": "Seven small airports kept with scheduled flights",
+    "status": "Mundra, Cooch-Behar, Jeypore, Jamshedpur, Rourkela, Utkela and Naini Saini (Pithoragarh) carry under 10 passengers per aircraft movement (AAI), as small 9- to 19-seat regional routes do. Nothing official says their traffic is business or general aviation only; DGCA's schedule would confirm it.",
+    "url": "https://www.aai.aero/en/business-opportunities/aai-traffic-news"
+   },
+   {
+    "what": "Darbhanga, Purnea and Ziro airports: names",
+    "status": "Not in the eAIP or DGCA's licence lists (they appear only in AAI's traffic statistics, by place name), so their names are the place name with Airport; every other airport has its eAIP name.",
+    "url": "https://www.aai.aero/en/business-opportunities/aai-traffic-news"
+   },
+   {
+    "what": "Station names with a city's former name",
+    "status": "Ahmadnagar (the city is Ahilyanagar since 13 March 2025), Gurgaon, Bangalore Cantonment and Shimoga Bidare keep their names: no official renaming of these stations was found, and Indian Railways' station list could not be read.",
+    "url": "https://rdd.maharashtra.gov.in/en/document/notification-regarding-changing-the-name-of-ahmednagar-to-ahilyanagar/"
+   },
+   {
+    "what": "Polavaram district, Andhra Pradesh",
+    "status": "In the official district directory, but no official source found says which district or districts it was formed from, so the place card does not name an area for it.",
+    "url": "https://polavaram.ap.gov.in/"
+   }
+  ]
+ },
+ "disputed": {
+  "state_file": [
+   {
+    "label": "DISPUTED (MADHYA PRADESH & GUJARAT)",
+    "km2": 4.4,
+    "overlaps": [
+     {
+      "with": "DISPUTED (GUJRAT & MADHYA PRADESH)",
+      "km2": 4.4
+     }
+    ]
+   },
+   {
+    "label": "DISPUTED (MADHYA PRADESH & RAJASTHAN)",
+    "km2": 15.9,
+    "overlaps": [
+     {
+      "with": "DISPUTED (RAJSTHAN & MADHYA PRADESH)",
+      "km2": 15.8
+     }
+    ]
+   },
+   {
+    "label": "DISPUTED (RAJATHAN & GUJARAT)",
+    "km2": 14.2,
+    "overlaps": [
+     {
+      "with": "DISPUTED (RAJSTHAN & GUJRAT)",
+      "km2": 10.6
+     },
+     {
+      "with": "DISPUTED (GUJRAT & MAHARASHTRA)",
+      "km2": 3.5
+     }
+    ]
+   },
+   {
+    "label": "DISPUTED (WEST BENGAL , BIHAR & JHARKHAND)",
+    "km2": 14.5,
+    "overlaps": [
+     {
+      "with": "Māldah district",
+      "km2": 14.5
+     }
+    ]
+   }
+  ],
+  "district_file": [
+   {
+    "label": "DISPUTED (GUJRAT & MADHYA PRADESH)",
+    "km2": 4.4,
+    "parts": 2,
+    "overlaps": [
+     {
+      "with": "DISPUTED (MADHYA PRADESH & GUJARAT)",
+      "km2": 4.4
+     }
+    ]
+   },
+   {
+    "label": "DISPUTED (GUJRAT & MAHARASHTRA)",
+    "km2": 3.6,
+    "parts": 2,
+    "overlaps": [
+     {
+      "with": "DISPUTED (RAJATHAN & GUJARAT)",
+      "km2": 3.6
+     }
+    ]
+   },
+   {
+    "label": "DISPUTED (JHARKHAND & BIHAR)",
+    "km2": 6.1,
+    "parts": 1,
+    "overlaps": [
+     {
+      "with": "JHARKHAND",
+      "km2": 6.1
+     }
+    ]
+   },
+   {
+    "label": "DISPUTED (RAJSTHAN & GUJRAT)",
+    "km2": 12.3,
+    "parts": 16,
+    "overlaps": [
+     {
+      "with": "DISPUTED (RAJATHAN & GUJARAT)",
+      "km2": 10.6
+     },
+     {
+      "with": "GUJARAT",
+      "km2": 1.7
+     }
+    ]
+   },
+   {
+    "label": "DISPUTED (RAJSTHAN & MADHYA PRADESH)",
+    "km2": 15.9,
+    "parts": 6,
+    "overlaps": [
+     {
+      "with": "DISPUTED (MADHYA PRADESH & RAJASTHAN)",
+      "km2": 15.9
+     }
+    ]
+   },
+   {
+    "label": "DISPUTED (UTTAR PRADESH & MADHYA PRADESH)",
+    "km2": 2.7,
+    "parts": 1,
+    "overlaps": [
+     {
+      "with": "MADHYA PRADESH",
+      "km2": 2.7
+     }
+    ]
+   }
+  ]
  }
 }
