@@ -1,0 +1,515 @@
+{
+ "version": "2.4",
+ "exported": "2026-11-04",
+ "sources": [
+  {
+   "key": "boundaries",
+   "label": "Boundaries",
+   "short": "Survey of India",
+   "text": "Source: Survey of India, Government of India. 2020 Administrative Boundary Database (states and districts), metadata dated 16 October 2025. Two district names follow the official district directory (National Portal of India, 3 November 2026): Bengaluru South (formerly Rāmanagara) and Y.S.R. Kadapa. LGD codes: Local Government Directory, Ministry of Panchayati Raj (All Districts of India, 4 November 2026: 790 districts), matched by Census 2011 code, then by state and name for the districts formed after 2011",
+   "date": "2025-10-16",
+   "credit": "Source: Survey of India, Government of India"
+  },
+  {
+   "key": "osm",
+   "label": "Roads, railways, stations and rivers",
+   "short": "OpenStreetMap",
+   "text": "© OpenStreetMap contributors, under the ODbL 1.0; Geofabrik India extract. Roads are classed by their official number: national highways by MoRTH's list as on 31 December 2025 (Annual Report 2025-26, Appendix 2), NE numbers and motorways as expressways, SH numbers as state highways. Railways are the running lines (sidings, yards, spurs and crossovers left out), with narrow gauge. Station renamings from official notices (Hubballi: Press Information Bureau, 12 March 2023)",
+   "date": "2026-11-01",
+   "credit": "© OpenStreetMap contributors (ODbL), Geofabrik extract"
+  },
+  {
+   "key": "airports",
+   "label": "Airports",
+   "short": "AAI, DGCA",
+   "text": "Official civil airports: eAIP India AD 1.3 and AD 1.4 (AIRAC November 2026), DGCA's licensed aerodromes (3 November 2026) and AAI's traffic statistics for October 2025 to September 2026 (Annexure III C). Scheduled flights means scheduled airline departures: DGCA’s Winter 2026 schedule could not be read (its files returned 404 on 3 November 2026), so an airport counts when AAI recorded at least 100 passengers in at least 3 of those 12 months, or in every month since it opened, except Juhu, HAL Bengaluru and Begumpet, whose traffic is business and general aviation only. Names are the eAIP's; where two airports serve one city, the others show their locality in brackets, for example Hyderabad International Airport (Begumpet). Coordinates and IATA codes: OurAirports (public domain, 2 November 2026). Size by AAI passengers, October 2025 to September 2026 (busy 5 million or more, medium 1 to 5 million, regional under 1 million); international as eAIP AD 1.3 lists them; flights a week from AAI's aircraft movements, July to September 2026 (Annexure II C)",
+   "date": "2026-11-03",
+   "credit": "Airports: AAI, DGCA; coordinates OurAirports (public domain)"
+  },
+  {
+   "key": "elevation",
+   "label": "Elevation",
+   "short": "Open-Meteo",
+   "text": "Produced using Copernicus WorldDEM™-90 © DLR e.V. 2010-2014 and © Airbus Defence and Space GmbH 2014-2018 provided under COPERNICUS by the European Union and ESA; all rights reserved. The organisations in charge of the Copernicus programme by law or by delegation do not incur any liability for any use of the Copernicus WorldDEM™-90. Through the Open-Meteo.com elevation API (CC BY 4.0)",
+   "date": null,
+   "credit": "Elevation: Copernicus WorldDEM-90 via Open-Meteo.com (CC BY 4.0)"
+  },
+  {
+   "key": "names",
+   "label": "Place names and search",
+   "short": "Nominatim",
+   "text": "Nominatim, © OpenStreetMap contributors (search only when you press Enter)",
+   "date": null,
+   "credit": "Names and search: Nominatim, © OpenStreetMap contributors"
+  },
+  {
+   "key": "population",
+   "label": "Population (District connectivity)",
+   "short": "JRC GHSL",
+   "date": "2026-11-03",
+   "text": "GHS-POP R2023A, epoch 2025, 1 km grid (European Commission, Joint Research Centre; Schiavina et al. 2023, doi:10.2905/2FF68A52-5B5B-4A22-8F40-C41DA8332CFE; CC BY 4.0), the cells inside India's official outline. For each 1 km cell, the straight-line distance on the WGS 84 ellipsoid to the nearest national highway, railway station or halt, and airport with scheduled flights; per district, the share of people within 10 km, 10 km and 100 km of them, and the average of the three",
+   "credit": "Population: JRC GHSL (CC BY 4.0)"
+  }
+ ],
+ "layers": {
+  "states": {
+   "file": "states.geojson",
+   "count": 40,
+   "geomType": "MultiPolygon",
+   "attrs": [
+    "state"
+   ],
+   "bytes": 3136164,
+   "simplify": "GEOS coverage simplification",
+   "source": "boundaries",
+   "key": {
+    "main": 36,
+    "extra": 4,
+    "km": null
+   }
+  },
+  "districts": {
+   "file": "districts.geojson",
+   "count": 808,
+   "geomType": "MultiPolygon",
+   "attrs": [
+    "district",
+    "state",
+    "lgd_code",
+    "soi_code",
+    "remarks"
+   ],
+   "bytes": 4930861,
+   "simplify": "GEOS coverage simplification",
+   "source": "boundaries",
+   "key": {
+    "main": 780,
+    "extra": 6,
+    "km": null
+   }
+  },
+  "connectivity": {
+   "file": "connectivity.geojson",
+   "count": 786,
+   "geomType": "MultiPolygon",
+   "attrs": [
+    "district",
+    "state",
+    "disputed",
+    "shown_as",
+    "note",
+    "lgd_code",
+    "population",
+    "score",
+    "road_pct",
+    "rail_pct",
+    "air_pct",
+    "score_band",
+    "road_band",
+    "rail_band",
+    "air_band"
+   ],
+   "bytes": 5881542,
+   "source": "population",
+   "key": {
+    "main": 780,
+    "extra": 6
+   }
+  },
+  "rivers": {
+   "file": "rivers.pmtiles",
+   "count": 11354,
+   "geomType": "MultiLineString",
+   "attrs": [
+    "name",
+    "major",
+    "river_class"
+   ],
+   "bytes": 15967940,
+   "minzoom": 4,
+   "maxzoom": 12,
+   "fullzoom": 6,
+   "source": "osm",
+   "key": {
+    "main": 4580,
+    "extra": null,
+    "km": 212561
+   }
+  },
+  "roads": {
+   "file": "roads.pmtiles",
+   "count": 406319,
+   "geomType": "MultiLineString",
+   "attrs": [
+    "name",
+    "highway",
+    "ref",
+    "road_class",
+    "nh_badge"
+   ],
+   "bytes": 71588260,
+   "minzoom": 4,
+   "maxzoom": 12,
+   "fullzoom": 7,
+   "source": "osm",
+   "key": {
+    "main": 406319,
+    "km": 504270
+   }
+  },
+  "railways": {
+   "file": "railways.pmtiles",
+   "count": 57118,
+   "geomType": "MultiLineString",
+   "attrs": [
+    "name",
+    "railway",
+    "rail_class",
+    "gauge"
+   ],
+   "bytes": 10736608,
+   "minzoom": 4,
+   "maxzoom": 12,
+   "fullzoom": 4,
+   "source": "osm",
+   "key": {
+    "main": 57118,
+    "km": 71749
+   }
+  },
+  "stations": {
+   "file": "stations.geojson",
+   "count": 9270,
+   "geomType": "Point",
+   "attrs": [
+    "name",
+    "railway",
+    "station",
+    "rank"
+   ],
+   "bytes": 1660272,
+   "source": "osm",
+   "key": {
+    "main": 9270,
+    "extra": 815
+   }
+  },
+  "airports": {
+   "file": "airports.geojson",
+   "count": 130,
+   "geomType": "Point",
+   "attrs": [
+    "name",
+    "iata_code",
+    "icao",
+    "type",
+    "scheduled_service",
+    "locality",
+    "served",
+    "tier",
+    "international",
+    "flights_week",
+    "seasonal",
+    "season_note",
+    "pax_12m"
+   ],
+   "bytes": 49356,
+   "source": "airports",
+   "key": {
+    "main": 130
+   }
+  },
+  "aerodromes": {
+   "file": "aerodromes.geojson",
+   "count": 20,
+   "geomType": "Point",
+   "attrs": [
+    "name",
+    "iata_code",
+    "icao",
+    "type",
+    "scheduled_service",
+    "locality",
+    "served",
+    "no_flights_why"
+   ],
+   "bytes": 6800,
+   "source": "airports",
+   "key": {
+    "main": 20
+   }
+  }
+ },
+ "total_bytes": 113957803,
+ "outline": {
+  "file": "india_outline.geojson",
+  "style": "arcs_india_outline.sld",
+  "source": "boundaries",
+  "bytes": 902381
+ },
+ "lookup": {
+  "zoom": 12,
+  "extent": 16384,
+  "admin": "lk_admin.pmtiles",
+  "highway": "lk_highways.pmtiles",
+  "road": "lk_roads.pmtiles",
+  "river": "lk_rivers.pmtiles",
+  "exclude": "lookup.json",
+  "bytes": 69944095
+ },
+ "district_changes": {
+  "checked": "2026-11-03",
+  "changes": [
+   {
+    "state": "DELHI",
+    "districts": [
+     "CENTRAL",
+     "EAST",
+     "NAZUL",
+     "NEW DELHI",
+     "NORTH",
+     "NORTH EAST",
+     "NORTH WEST",
+     "SHAHDARA",
+     "SOUTH",
+     "SOUTH EAST",
+     "SOUTH WEST",
+     "WEST"
+    ],
+    "note": "Delhi was reorganised into 13 districts on 25 December 2025; official boundaries not yet published.",
+    "source": "Delhi Revenue Department, notification of 25 December 2025",
+    "url": "https://revenue.delhi.gov.in/revenue/notification-no-f223sdm-iihqland2025285-dated-25122025-creation-39-sub-divisions-13-areas"
+   },
+   {
+    "state": "HARYANA",
+    "districts": [
+     "HISAR"
+    ],
+    "note": "Hansi, part of this district, became a district on 22 December 2025; official boundaries not yet published.",
+    "source": "Hansi district, Government of Haryana",
+    "url": "https://hansi.haryana.gov.in/"
+   },
+   {
+    "state": "GUJARAT",
+    "districts": [
+     "BANAS KANTHA"
+    ],
+    "note": "The Tharad area of this district is now the new Vav-Tharad district; official boundaries not yet published.",
+    "source": "Gujarat Information, 25 January 2026",
+    "url": "https://gujaratinformation.gujarat.gov.in/PressReleaseDetailsL/?id=34125&DepId=56&DistrictId=35&LanguageId=1"
+   },
+   {
+    "state": "NAGALAND",
+    "districts": [
+     "PHEK"
+    ],
+    "note": "Meluri, a sub-division of this district, became a district (notified 2 November 2024); official boundaries not yet published.",
+    "source": "Nagaland IPR, 6 March 2025",
+    "url": "https://ipr.nagaland.gov.in/THIRD-DAY-OF-THE-SIXTH-SESSION-OF-THE-14th-NLA-ON-6th-MARCH"
+   },
+   {
+    "state": "ANDHRA PRADESH",
+    "districts": [
+     "Prakasam"
+    ],
+    "note": "The western part of this district became Markapuram district on 31 December 2025; official boundaries not yet published.",
+    "source": "Markapuram district, Government of Andhra Pradesh",
+    "url": "https://markapuram.ap.gov.in/about-district/"
+   }
+  ]
+ },
+ "awaiting": {
+  "checked": "2026-11-03",
+  "items": [
+   {
+    "what": "DGCA's Domestic Flight Schedule, Winter 2026",
+    "status": "DGCA's page lists the nine airlines' files (25 October 2026 to 27 March 2027), but every file returned 404. Until they can be read, scheduled flights follow AAI's monthly traffic, as the about page describes.",
+    "url": "https://www.dgca.gov.in/digigov-portal/?page=4201%2F4200%2Fservicename"
+   },
+   {
+    "what": "Begumpet, Hyderabad (VOHY): no scheduled flights",
+    "status": "Left out of scheduled flights as business and general aviation only, by the owner's decision. No official statement says so; AAI's figures show about 3 passengers per aircraft movement, and the eAIP lists weekday operator hours and no customs or ground handling.",
+    "url": "https://aim-india.aai.aero/eaip"
+   },
+   {
+    "what": "Seven small airports kept with scheduled flights",
+    "status": "Mundra, Cooch-Behar, Jeypore, Jamshedpur, Rourkela, Utkela and Naini Saini (Pithoragarh) carry under 10 passengers per aircraft movement (AAI), as small 9- to 19-seat regional routes do. Nothing official says their traffic is business or general aviation only; DGCA's schedule would confirm it.",
+    "url": "https://www.aai.aero/en/business-opportunities/aai-traffic-news"
+   },
+   {
+    "what": "Darbhanga, Purnea and Ziro airports: names",
+    "status": "Not in the eAIP or DGCA's licence lists (they appear only in AAI's traffic statistics, by place name), so their names are the place name with Airport; every other airport has its eAIP name.",
+    "url": "https://www.aai.aero/en/business-opportunities/aai-traffic-news"
+   },
+   {
+    "what": "Station names with a city's former name",
+    "status": "Ahmadnagar (the city is Ahilyanagar since 13 March 2025), Gurgaon, Bangalore Cantonment and Shimoga Bidare keep their names: no official renaming of these stations was found, and Indian Railways' station list could not be read.",
+    "url": "https://rdd.maharashtra.gov.in/en/document/notification-regarding-changing-the-name-of-ahmednagar-to-ahilyanagar/"
+   },
+   {
+    "what": "Polavaram district, Andhra Pradesh",
+    "status": "In the official district directory, but no official source found says which district or districts it was formed from, so the place card does not name an area for it.",
+    "url": "https://polavaram.ap.gov.in/"
+   }
+  ]
+ },
+ "disputed": {
+  "state_file": [
+   {
+    "label": "DISPUTED (MADHYA PRADESH & GUJARAT)",
+    "km2": 4.4,
+    "overlaps": [
+     {
+      "with": "DISPUTED (GUJRAT & MADHYA PRADESH)",
+      "km2": 4.4
+     }
+    ]
+   },
+   {
+    "label": "DISPUTED (MADHYA PRADESH & RAJASTHAN)",
+    "km2": 15.9,
+    "overlaps": [
+     {
+      "with": "DISPUTED (RAJSTHAN & MADHYA PRADESH)",
+      "km2": 15.8
+     }
+    ]
+   },
+   {
+    "label": "DISPUTED (RAJATHAN & GUJARAT)",
+    "km2": 14.2,
+    "overlaps": [
+     {
+      "with": "DISPUTED (RAJSTHAN & GUJRAT)",
+      "km2": 10.6
+     },
+     {
+      "with": "DISPUTED (GUJRAT & MAHARASHTRA)",
+      "km2": 3.5
+     }
+    ]
+   },
+   {
+    "label": "DISPUTED (WEST BENGAL , BIHAR & JHARKHAND)",
+    "km2": 14.5,
+    "overlaps": [
+     {
+      "with": "Māldah district",
+      "km2": 14.5
+     }
+    ]
+   }
+  ],
+  "district_file": [
+   {
+    "label": "DISPUTED (GUJRAT & MADHYA PRADESH)",
+    "km2": 4.4,
+    "parts": 2,
+    "overlaps": [
+     {
+      "with": "DISPUTED (MADHYA PRADESH & GUJARAT)",
+      "km2": 4.4
+     }
+    ]
+   },
+   {
+    "label": "DISPUTED (GUJRAT & MAHARASHTRA)",
+    "km2": 3.6,
+    "parts": 2,
+    "overlaps": [
+     {
+      "with": "DISPUTED (RAJATHAN & GUJARAT)",
+      "km2": 3.6
+     }
+    ]
+   },
+   {
+    "label": "DISPUTED (JHARKHAND & BIHAR)",
+    "km2": 6.1,
+    "parts": 1,
+    "overlaps": [
+     {
+      "with": "JHARKHAND",
+      "km2": 6.1
+     }
+    ]
+   },
+   {
+    "label": "DISPUTED (RAJSTHAN & GUJRAT)",
+    "km2": 12.3,
+    "parts": 16,
+    "overlaps": [
+     {
+      "with": "DISPUTED (RAJATHAN & GUJARAT)",
+      "km2": 10.6
+     },
+     {
+      "with": "GUJARAT",
+      "km2": 1.7
+     }
+    ]
+   },
+   {
+    "label": "DISPUTED (RAJSTHAN & MADHYA PRADESH)",
+    "km2": 15.9,
+    "parts": 6,
+    "overlaps": [
+     {
+      "with": "DISPUTED (MADHYA PRADESH & RAJASTHAN)",
+      "km2": 15.9
+     }
+    ]
+   },
+   {
+    "label": "DISPUTED (UTTAR PRADESH & MADHYA PRADESH)",
+    "km2": 2.7,
+    "parts": 1,
+    "overlaps": [
+     {
+      "with": "MADHYA PRADESH",
+      "km2": 2.7
+     }
+    ]
+   }
+  ]
+ },
+ "profiles": {
+  "file": "profiles.json",
+  "bytes": 296843
+ },
+ "notes": {
+  "roads": "Expressways 7,471 km · national highways 1,30,301 km · state highways 1,25,749 km; each road counted once, by its official number",
+  "railways": {
+   "text": "Running lines only, parallel tracks counted once. Indian Railways: 69,440 route km on 31 March 2025.",
+   "source": "Economic Survey 2025-26",
+   "url": "https://www.indiabudget.gov.in/economicsurvey/doc/stat/tab1.26.pdf"
+  },
+  "stations": "815 junctions and terminals",
+  "airports": {
+   "text": "Government count: 166 operational airports, including heliports and water aerodromes (Rajya Sabha, 27 July 2026). ARCS shows the 150 aeroplane airports, of which 130 have scheduled flights.",
+   "source": "Starred Question 88",
+   "url": "https://sansad.in/getFile/annex/271/AS88_p7eWY7.pdf?source=pqars"
+  }
+ },
+ "checks": {
+  "nh_km_once": 133353,
+  "morth_km": 146572,
+  "nh_diff_pct": -9.0,
+  "rail_route_km": 71749,
+  "ir_route_km": 69440,
+  "rail_diff_pct": 3.3
+ },
+ "connectivity": {
+  "cells": 2274127,
+  "india": {
+   "road_pct": 80.1,
+   "rail_pct": 64.7,
+   "air_pct": 85.6
+  },
+  "thresholds": {
+   "road_km": 10,
+   "rail_km": 10,
+   "air_km": 100
+  }
+ }
+}
