@@ -160,7 +160,9 @@
         <VendorOption name="graphic-resize">stretch</VendorOption>
         <VendorOption name="graphic-margin">2 4</VendorOption>
         <VendorOption name="repeat">520</VendorOption>
-        <VendorOption name="spaceAround">6</VendorOption>
+        <!-- GeoServer gives every numbered road one badge at least; 40 px around each keeps it about as sparse as the
+             web edition, which places one badge per 520 px cell (it reads repeat, not spaceAround) -->
+        <VendorOption name="spaceAround">40</VendorOption>
         <VendorOption name="group">yes</VendorOption>
         <VendorOption name="conflictResolution">true</VendorOption>
       </TextSymbolizer>
