@@ -2,18 +2,18 @@
 <StyledLayerDescriptor version="1.0.0"
   xmlns="http://www.opengis.net/sld"
   xmlns:ogc="http://www.opengis.net/ogc">
-  <NamedLayer><Name>webgis_india:districts</Name>
+  <NamedLayer><Name>webgis_india:districts_soi</Name>
   <UserStyle><FeatureTypeStyle>
     <Rule>
       <PolygonSymbolizer>
         <Fill>
-          <CssParameter name="fill">#0ea5e9</CssParameter>
+          <CssParameter name="fill">#aab2bb</CssParameter>
           <CssParameter name="fill-opacity">0.03</CssParameter>
         </Fill>
         <Stroke>
-          <CssParameter name="stroke">#0284c7</CssParameter>
+          <CssParameter name="stroke">#aab2bb</CssParameter>
           <CssParameter name="stroke-width">0.7</CssParameter>
-          <CssParameter name="stroke-opacity">0.65</CssParameter>
+          <CssParameter name="stroke-opacity">0.9</CssParameter>
           <CssParameter name="stroke-dasharray">5 3</CssParameter>
         </Stroke>
       </PolygonSymbolizer>
@@ -33,7 +33,7 @@
           </PointPlacement>
         </LabelPlacement>
         <Halo><Radius>1.5</Radius><Fill><CssParameter name="fill">#ffffff</CssParameter></Fill></Halo>
-        <Fill><CssParameter name="fill">#0369a1</CssParameter></Fill>
+        <Fill><CssParameter name="fill">#5b636d</CssParameter></Fill>
         <VendorOption name="autoWrap">40</VendorOption>
         <VendorOption name="maxDisplacement">20</VendorOption>
       </TextSymbolizer>

@@ -1,12 +1,12 @@
 {
- "version": "2.3",
- "exported": "2026-11-03",
+ "version": "2.4",
+ "exported": "2026-11-04",
  "sources": [
   {
    "key": "boundaries",
    "label": "Boundaries",
    "short": "Survey of India",
-   "text": "Source: Survey of India, Government of India. 2020 Administrative Boundary Database (states and districts), metadata dated 16 October 2025. Two district names follow the official district directory (National Portal of India, 3 November 2026): Bengaluru South (formerly Rāmanagara) and Y.S.R. Kadapa",
+   "text": "Source: Survey of India, Government of India. 2020 Administrative Boundary Database (states and districts), metadata dated 16 October 2025. Two district names follow the official district directory (National Portal of India, 3 November 2026): Bengaluru South (formerly Rāmanagara) and Y.S.R. Kadapa. LGD codes: Local Government Directory, Ministry of Panchayati Raj (All Districts of India, 4 November 2026: 790 districts), matched by Census 2011 code, then by state and name for the districts formed after 2011",
    "date": "2025-10-16",
    "credit": "Source: Survey of India, Government of India"
   },
@@ -14,7 +14,7 @@
    "key": "osm",
    "label": "Roads, railways, stations and rivers",
    "short": "OpenStreetMap",
-   "text": "© OpenStreetMap contributors, under the ODbL 1.0; Geofabrik India extract. Station renamings from official notices (Hubballi: Press Information Bureau, 12 March 2023)",
+   "text": "© OpenStreetMap contributors, under the ODbL 1.0; Geofabrik India extract. Roads are classed by their official number: national highways by MoRTH's list as on 31 December 2025 (Annual Report 2025-26, Appendix 2), NE numbers and motorways as expressways, SH numbers as state highways. Railways are the running lines (sidings, yards, spurs and crossovers left out), with narrow gauge. Station renamings from official notices (Hubballi: Press Information Bureau, 12 March 2023)",
    "date": "2026-11-01",
    "credit": "© OpenStreetMap contributors (ODbL), Geofabrik extract"
   },
@@ -22,7 +22,7 @@
    "key": "airports",
    "label": "Airports",
    "short": "AAI, DGCA",
-   "text": "Official civil airports: eAIP India AD 1.3 and AD 1.4 (AIRAC November 2026), DGCA's licensed aerodromes (3 November 2026) and AAI's traffic statistics for October 2025 to September 2026 (Annexure III C). Scheduled flights means scheduled airline departures: DGCA’s Winter 2026 schedule could not be read (its files returned 404 on 3 November 2026), so an airport counts when AAI recorded at least 100 passengers in at least 3 of those 12 months, or in every month since it opened, except Juhu, HAL Bengaluru and Begumpet, whose traffic is business and general aviation only. Names are the eAIP's; where two airports serve one city, the others show their locality in brackets, for example Hyderabad International Airport (Begumpet). Coordinates and IATA codes: OurAirports (public domain, 2 November 2026)",
+   "text": "Official civil airports: eAIP India AD 1.3 and AD 1.4 (AIRAC November 2026), DGCA's licensed aerodromes (3 November 2026) and AAI's traffic statistics for October 2025 to September 2026 (Annexure III C). Scheduled flights means scheduled airline departures: DGCA’s Winter 2026 schedule could not be read (its files returned 404 on 3 November 2026), so an airport counts when AAI recorded at least 100 passengers in at least 3 of those 12 months, or in every month since it opened, except Juhu, HAL Bengaluru and Begumpet, whose traffic is business and general aviation only. Names are the eAIP's; where two airports serve one city, the others show their locality in brackets, for example Hyderabad International Airport (Begumpet). Coordinates and IATA codes: OurAirports (public domain, 2 November 2026). Size by AAI passengers, October 2025 to September 2026 (busy 5 million or more, medium 1 to 5 million, regional under 1 million); international as eAIP AD 1.3 lists them; flights a week from AAI's aircraft movements, July to September 2026 (Annexure II C)",
    "date": "2026-11-03",
    "credit": "Airports: AAI, DGCA; coordinates OurAirports (public domain)"
   },
@@ -41,6 +41,14 @@
    "text": "Nominatim, © OpenStreetMap contributors (search only when you press Enter)",
    "date": null,
    "credit": "Names and search: Nominatim, © OpenStreetMap contributors"
+  },
+  {
+   "key": "population",
+   "label": "Population (District connectivity)",
+   "short": "JRC GHSL",
+   "date": "2026-11-03",
+   "text": "GHS-POP R2023A, epoch 2025, 1 km grid (European Commission, Joint Research Centre; Schiavina et al. 2023, doi:10.2905/2FF68A52-5B5B-4A22-8F40-C41DA8332CFE; CC BY 4.0), the cells inside India's official outline. For each 1 km cell, the straight-line distance on the WGS 84 ellipsoid to the nearest national highway, expressway or other trunk road, railway station or halt, and airport with scheduled flights; per district, the share of people within 10 km, 10 km and 100 km of them, and the average of the three",
+   "credit": "Population: JRC GHSL (CC BY 4.0)"
   }
  ],
  "layers": {
@@ -80,41 +88,32 @@
     "km": null
    }
   },
-  "stations": {
-   "file": "stations.geojson",
-   "count": 9270,
-   "geomType": "Point",
+  "connectivity": {
+   "file": "connectivity.geojson",
+   "count": 786,
+   "geomType": "MultiPolygon",
    "attrs": [
-    "name",
-    "railway",
-    "station"
+    "district",
+    "state",
+    "disputed",
+    "shown_as",
+    "note",
+    "lgd_code",
+    "population",
+    "score",
+    "road_pct",
+    "rail_pct",
+    "air_pct",
+    "score_band",
+    "road_band",
+    "rail_band",
+    "air_band"
    ],
-   "bytes": 1505491,
-   "source": "osm",
+   "bytes": 5881552,
+   "source": "population",
    "key": {
-    "main": 9270,
-    "extra": null,
-    "km": null
-   }
-  },
-  "airports": {
-   "file": "airports.geojson",
-   "count": 150,
-   "geomType": "Point",
-   "attrs": [
-    "name",
-    "iata_code",
-    "type",
-    "scheduled_service",
-    "locality",
-    "served"
-   ],
-   "bytes": 36303,
-   "source": "airports",
-   "key": {
-    "main": 150,
-    "extra": 130,
-    "km": null
+    "main": 780,
+    "extra": 6
    }
   },
   "rivers": {
@@ -123,9 +122,10 @@
    "geomType": "MultiLineString",
    "attrs": [
     "name",
-    "major"
+    "major",
+    "river_class"
    ],
-   "bytes": 15271199,
+   "bytes": 15967940,
    "minzoom": 4,
    "maxzoom": 12,
    "fullzoom": 6,
@@ -143,40 +143,104 @@
    "attrs": [
     "name",
     "highway",
-    "ref"
+    "ref",
+    "road_class",
+    "nh_badge"
    ],
-   "bytes": 63266884,
+   "bytes": 71588260,
    "minzoom": 4,
    "maxzoom": 12,
    "fullzoom": 7,
    "source": "osm",
    "key": {
     "main": 406319,
-    "extra": null,
-    "km": 578270
+    "km": 504270
    }
   },
   "railways": {
    "file": "railways.pmtiles",
-   "count": 99942,
+   "count": 57118,
    "geomType": "MultiLineString",
    "attrs": [
     "name",
-    "railway"
+    "railway",
+    "rail_class",
+    "gauge"
    ],
-   "bytes": 11947158,
+   "bytes": 10736608,
    "minzoom": 4,
    "maxzoom": 12,
    "fullzoom": 4,
    "source": "osm",
    "key": {
-    "main": 99942,
-    "extra": null,
-    "km": 133639
+    "main": 57118,
+    "km": 71749
+   }
+  },
+  "stations": {
+   "file": "stations.geojson",
+   "count": 9270,
+   "geomType": "Point",
+   "attrs": [
+    "name",
+    "railway",
+    "station",
+    "rank"
+   ],
+   "bytes": 1660272,
+   "source": "osm",
+   "key": {
+    "main": 9270,
+    "extra": 815
+   }
+  },
+  "airports": {
+   "file": "airports.geojson",
+   "count": 130,
+   "geomType": "Point",
+   "attrs": [
+    "name",
+    "iata_code",
+    "icao",
+    "type",
+    "scheduled_service",
+    "locality",
+    "served",
+    "tier",
+    "international",
+    "flights_week",
+    "seasonal",
+    "season_note",
+    "pax_12m"
+   ],
+   "bytes": 49356,
+   "source": "airports",
+   "key": {
+    "main": 130
+   }
+  },
+  "aerodromes": {
+   "file": "aerodromes.geojson",
+   "count": 20,
+   "geomType": "Point",
+   "attrs": [
+    "name",
+    "iata_code",
+    "icao",
+    "type",
+    "scheduled_service",
+    "locality",
+    "served",
+    "no_flights_why"
+   ],
+   "bytes": 6800,
+   "source": "airports",
+   "key": {
+    "main": 20
    }
   }
  },
- "total_bytes": 100094060,
+ "total_bytes": 113957813,
  "outline": {
   "file": "india_outline.geojson",
   "style": "arcs_india_outline.sld",
@@ -191,7 +255,7 @@
   "road": "lk_roads.pmtiles",
   "river": "lk_rivers.pmtiles",
   "exclude": "lookup.json",
-  "bytes": 68949899
+  "bytes": 69944095
  },
  "district_changes": {
   "checked": "2026-11-03",
@@ -408,5 +472,44 @@
     ]
    }
   ]
+ },
+ "profiles": {
+  "file": "profiles.json",
+  "bytes": 296853
+ },
+ "notes": {
+  "roads": "Expressways 7,471 km · national highways 1,30,301 km · state highways 1,25,749 km; each road counted once, by its official number",
+  "railways": {
+   "text": "Running lines only, parallel tracks counted once. Indian Railways: 69,440 route km on 31 March 2025.",
+   "source": "Economic Survey 2025-26",
+   "url": "https://www.indiabudget.gov.in/economicsurvey/doc/stat/tab1.26.pdf"
+  },
+  "stations": "815 junctions and terminals",
+  "airports": {
+   "text": "Government count: 166 operational airports, including heliports and water aerodromes (Rajya Sabha, 27 July 2026). ARCS shows the 150 aeroplane airports, of which 130 have scheduled flights.",
+   "source": "Starred Question 88",
+   "url": "https://sansad.in/getFile/annex/271/AS88_p7eWY7.pdf?source=pqars"
+  }
+ },
+ "checks": {
+  "nh_km_once": 133353,
+  "morth_km": 146572,
+  "nh_diff_pct": -9.0,
+  "rail_route_km": 71749,
+  "ir_route_km": 69440,
+  "rail_diff_pct": 3.3
+ },
+ "connectivity": {
+  "cells": 2274127,
+  "india": {
+   "road_pct": 80.1,
+   "rail_pct": 64.7,
+   "air_pct": 85.6
+  },
+  "thresholds": {
+   "road_km": 10,
+   "rail_km": 10,
+   "air_km": 100
+  }
  }
 }

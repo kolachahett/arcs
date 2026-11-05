@@ -9,8 +9,8 @@
     <Rule>
       <PolygonSymbolizer>
         <Stroke>
-          <CssParameter name="stroke">#3730a3</CssParameter>
-          <CssParameter name="stroke-width">1.2</CssParameter>
+          <CssParameter name="stroke">#4b5563</CssParameter>
+          <CssParameter name="stroke-width">1.5</CssParameter>
           <CssParameter name="stroke-opacity">1.0</CssParameter>
         </Stroke>
       </PolygonSymbolizer>

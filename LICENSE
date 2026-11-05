@@ -6,3 +6,5 @@ favicons and images). They may be viewed, but no permission is granted to copy, 
 without the author's written permission.
 
 It does not cover the map data in data/, which keeps its owners' licences: see DATA_LICENSE.md.
+Nor does it cover the map libraries in vendor/ (OpenLayers, ol-mapbox-style, pmtiles and ol-pmtiles), which keep
+their own open-source licences: see vendor/README.md.
